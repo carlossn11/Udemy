@@ -1,65 +1,43 @@
-// Section 11
-// Scope example
 #include <iostream>
-
+#include <iomanip>
 using namespace std;
 
-void local_example();
-void global_example();
-void static_local_example();
+//----DO NOT MODIFY THE CODE ABOVE THIS LINE----
+//----WRITE THE FUNCTION PROTOTYPE BELOW THIS LINE----
 
-int num {300};    // Global variable - declared outside any class or function
+double a_penny_doubled_everyday(int n, double p = 0.01);//----WRITE THE FUNCTION PARAMETER LIST WITHIN THE PARENTHESES
 
-void global_example() {
-    cout << "\nGlobal num is: " << num << " in global_example - start" << endl;
-    num *= 2;
-    cout << "Global num is: " << num << " in global_example - end" << endl;
-}
-
-void local_example(int x) {
-    int num {1000};     // local to local_example
-    cout << "\nLocal num is: " << num << " in local_example - start" << endl;
-    num=x;
-    cout << "Local num is: " << num << " in local_example - end" << endl;
-    // num1 in main is not within scope - so it can't be used here.
-}
-
-void static_local_example() {
-    static int num {5000};      // local to static_local_example static - retains it value between calls
-    cout << "\nLocal static  num is: " << num << " in static_local_example - start" << endl;
-    num += 1000;
-    cout << "Local static  num is: " << num << " in static_local_example - end" << endl;
-}
+//----WRITE THE FUNCTION PROTOTYPE ABOVE THIS LINE----
+//----DO NOT MODIFY THE CODE BELOW THIS LINE----
 
 int main() {
     
-    int num {100};  // Local to main
-    int num1 {500}; // Local to main
+//----DO NOT MODIFY THE CODE ABOVE THIS LINE----
+//----WRITE THE FUNCTION CALL BELOW THIS LINE----
+double total_amount = a_penny_doubled_everyday(18);
+     
     
-    cout << "Local num is : " << num << " in main" << endl;
-    
-    {   // creates a new level of scope
-        int num {200};  // local to this inner block
-        cout << "Local num is: " << num << " in inner block in main" << endl;
-        cout << "Inner block in main can see out - num1 is: " << num1 << endl;
-    }
-    
-    cout << "Local num is : " << num << " in main" << endl;
-
-    local_example(10);
-    local_example(20);
-    
-    global_example();
-    global_example();
-    
-    static_local_example();
-//    static_local_example();
-//    static_local_example();
-
-    cout << endl;
-    return 0;
+//----WRITE THE FUNCTION CALL ABOVE THIS LINE----
+//----DO NOT MODIFY THE CODE BELOW THIS LINE----
+    cout <<  "If I start with a penny and doubled it every day for 25 days, I will have $" << setprecision(10) << total_amount;
 }
 
+//----DO NOT MODIFY THE CODE ABOVE THIS LINE----
+//----WRITE THE FUNCTION DEFINITION BELOW THIS LINE----
 
-
-
+double a_penny_doubled_everyday(int n, double p) 
+{//----WRITE THE FUNCTION PARAMETER LIST WITHIN THE PARENTHESES
+    //----DO NOT MODIFY THE CODE ABOVE THIS LINE----
+    //----WRITE THE FUNCTION BODY BELOW THIS LINE----
+    static int i;
+    
+    if(!(i < n))
+    {
+        return p * 2;
+    }
+    i++;
+    return a_penny_doubled_everyday(n,p) * 2;
+    
+    //----WRITE THE FUNCTION BODY ABOVE THIS LINE----
+    //DO NOT MODIFY THE CODE BELOW THIS LINE----
+}
