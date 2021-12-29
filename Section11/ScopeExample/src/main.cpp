@@ -14,7 +14,7 @@ int main() {
     
 //----DO NOT MODIFY THE CODE ABOVE THIS LINE----
 //----WRITE THE FUNCTION CALL BELOW THIS LINE----
-double total_amount = a_penny_doubled_everyday(18);
+double total_amount = a_penny_doubled_everyday(30);
      
     
 //----WRITE THE FUNCTION CALL ABOVE THIS LINE----
@@ -26,18 +26,13 @@ double total_amount = a_penny_doubled_everyday(18);
 //----WRITE THE FUNCTION DEFINITION BELOW THIS LINE----
 
 double a_penny_doubled_everyday(int n, double p) 
-{//----WRITE THE FUNCTION PARAMETER LIST WITHIN THE PARENTHESES
-    //----DO NOT MODIFY THE CODE ABOVE THIS LINE----
-    //----WRITE THE FUNCTION BODY BELOW THIS LINE----
-    static int i;
+{
+    static int i = 1;
     
-    if(!(i < n))
+    if(i == n)
     {
-        return p * 2;
+        return p;
     }
     i++;
     return a_penny_doubled_everyday(n,p) * 2;
-    
-    //----WRITE THE FUNCTION BODY ABOVE THIS LINE----
-    //DO NOT MODIFY THE CODE BELOW THIS LINE----
 }
