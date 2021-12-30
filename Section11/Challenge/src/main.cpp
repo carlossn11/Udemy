@@ -96,12 +96,77 @@ Good luck!
 
 using namespace std;
 
-int main() {
+// void DisplayMenu(int selection, vector<int> &numbers);
+// void PrintNumbers(vector<int> &numbers);
+// void AddNumber(vector<int> &numbers);
+// void PrintMeanOfNumbers(vector<int> &numbers);
+// void PrintSmallestNum(vector<int> &numbers);
+// void PrintLargestNum(vector<int> &numbers);
 
-    vector<int> numbers {};
-    char selection {};
-    
-    do {
+void PrintLargestNum(vector<int> &numbers)
+{
+    if (numbers.size() == 0)
+        cout << "Unable to determine largest - list is empty"<< endl;   
+    else {
+            int largest = numbers.at(0);
+            for (auto num: numbers)
+                if (num > largest)
+                    largest = num;
+                cout << "The largest number is: " << largest << endl;
+            }
+
+}
+
+void PrintSmallestNum(vector<int> &numbers)
+{
+    if (numbers.size() == 0) 
+        cout << "Unable to determine the smallest - list is empty" << endl;
+    else {
+            int smallest = numbers.at(0);
+            for (auto num: numbers)
+                if (num < smallest)
+                    smallest = num;
+                cout << "The smallest number is: " << smallest << endl;
+    }
+
+}
+
+void PrintMeanOfNumbers(vector<int> &numbers)
+{
+    if (numbers.size() == 0)
+        cout << "Unable to calculate mean - no data" << endl;
+    else {
+            int total {};
+            for (auto num: numbers)
+                total += num;
+            cout << "The mean is : " << static_cast<double>(total)/numbers.size() << endl;
+    }
+}
+
+void AddNumber(vector<int> &numbers)
+{
+    int num_to_add {};
+    cout << "Enter an integer to add to the list: ";
+    cin >> num_to_add;
+    numbers.push_back(num_to_add);
+    cout << num_to_add << " added" << endl;
+}
+
+void PrintNumbers(vector<int> &numbers)
+{
+    if (numbers.size() == 0)
+        cout << "[] - the list is empty" << endl;
+    else {
+        cout << "[ ";
+        for (auto num: numbers)
+            cout << num << " ";
+        cout << "]" << endl;
+    }
+}
+
+void DisplayMenu(char selection, vector<int> &numbers)
+{
+        do {
         // Display menu
         cout << "\nP - Print numbers" << endl;
         cout << "A - Add a number" << endl;
@@ -114,57 +179,31 @@ int main() {
 
         
         if (selection == 'P' || selection == 'p') {
-            if (numbers.size() == 0)
-                cout << "[] - the list is empty" << endl;
-            else {
-                cout << "[ ";
-                for (auto num: numbers)
-                    cout << num << " ";
-                cout << "]" << endl;
-            }
+           PrintNumbers(numbers); 
         } else if (selection == 'A' || selection == 'a') {
-            int num_to_add {};
-            cout << "Enter an integer to add to the list: ";
-            cin >> num_to_add;
-            numbers.push_back(num_to_add);
-            cout << num_to_add << " added" << endl;
+            AddNumber(numbers);
         } else if (selection == 'M' || selection == 'm') {
-            if (numbers.size() == 0)
-                cout << "Unable to calculate mean - no data" << endl;
-            else {
-                int total {};
-                for (auto num: numbers)
-                    total += num;
-                cout << "The mean is : " << static_cast<double>(total)/numbers.size() << endl;
-            }
+            PrintMeanOfNumbers(numbers);
         } else if (selection == 'S' || selection == 's') {
-            if (numbers.size() == 0) 
-                cout << "Unable to determine the smallest - list is empty" << endl;
-            else {
-                int smallest = numbers.at(0);
-                for (auto num: numbers)
-                    if (num < smallest)
-                        smallest = num;
-                cout << "The smallest number is: " << smallest << endl;
-            }
+            PrintSmallestNum(numbers);
         } else if (selection == 'L' || selection == 'l') {
-            if (numbers.size() == 0)
-                cout << "Unable to determine largest - list is empty"<< endl;   
-            else {
-                int largest = numbers.at(0);
-                for (auto num: numbers)
-                    if (num > largest)
-                        largest = num;
-                cout << "The largest number is: " << largest << endl;
-            }
+            PrintLargestNum(numbers);
         } else if (selection == 'Q' || selection == 'q') {
             cout << "Goodbye" << endl;
         } else {
             cout << "Unknown selection, please try again" << endl;
         }
     } while (selection != 'q' && selection != 'Q');
+}
+
+
+int main() {
+
+    vector<int> numbers {};
+    char selection {};
+
+    DisplayMenu(selection, numbers);
 
     cout  << endl;
-    return 0;
-}
+ }
 
