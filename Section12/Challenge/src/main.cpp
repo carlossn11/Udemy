@@ -38,29 +38,41 @@
   
 #include <iostream>
 
-using namespace std;
+int *combine(const int *array1, const int *array2, const int Array1Size, const int Array2Size)
+{
+    int *ArrayPtr {new int[Array1Size*Array2Size]};
+    int x {0};
 
-int main() {
-    const size_t array1_size {5};
-    const size_t array2_size {3};
-    
-    int array1[] {1,2,3,4,5};
-    int array2[] {10,20,30};
-    
-    cout << "Array 1: " ;
-    print(array1,array1_size);
-    
-    cout << "Array 2: " ;
-    print(array2,array2_size);
-    
-    int *results = apply_all(array1, array1_size, array2, array2_size);
-    constexpr size_t results_size {array1_size * array2_size};
-
-    cout << "Result: " ;
-    print(results, results_size);
-    
-    cout << endl;
-
-    return 0;
+    for(size_t i {0}; i < Array2Size; i++)
+    {
+        for(size_t j {0}; j < Array1Size; j++)
+        {
+            ArrayPtr[x] = array2[i] * array1[j];
+            x++;
+        }
+    }
+    return ArrayPtr;
 }
 
+void print(const int *array, const int size)
+{
+    std::cout << "[ ";
+    for(size_t i {0}; i < size; i++)
+    {
+        std::cout << array[i] << " ";
+    }
+    std::cout << "]" << std::endl;
+}
+
+int main() 
+{
+    const int Arr1Size {5}, Arr2Size {3};
+    int arr1[] {1,2,3,4,5};
+    int arr2[] {10,20,30};
+
+    print(arr1, Arr1Size);
+    print(arr2, Arr2Size);
+    int *result = combine(arr1, arr2, Arr1Size, Arr2Size);
+    print(result, Arr1Size * Arr2Size);
+    delete [] result;
+}
