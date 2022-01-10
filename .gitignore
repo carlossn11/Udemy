@@ -2,5 +2,4 @@
 *.vscode
 *.tar
 *.DS_Store
-*.o
-Makefile
+*.d
