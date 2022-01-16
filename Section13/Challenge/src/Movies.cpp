@@ -30,9 +30,18 @@ Movies::~Movies() {
     Otherwise, create a movie object from the provided information
     and add that movie object to the movies vector and return true
     *********************************************************************/
-bool Movies::add_movie(std::string name, std::string rating, int watched) {
-    // you implement this method
-    return false;
+bool Movies::add_movie(std::string name, std::string rating, int watched) 
+{
+    for(size_t i {0}; i < movies.size(); i++)
+    {
+        if((movies.at(i)).GetName() == name)
+            return false;
+        else if(!(i < movies.size()))
+        {
+            Movie movie(name, rating, watched);
+            movies.push_back(movie);
+        }
+    }
 }
 
  /*************************************************************************
@@ -58,6 +67,10 @@ bool Movies::increment_watched(std::string name) {
     for each movie call the movie.display method so the movie
     object displays itself
     *********************************************************************/
-void Movies::display() const {
-   // You implement this method
+void Movies::display() const 
+{
+    for(const auto &movie : movies)
+    {
+        std::cout << movie.GetName() << "\n";
+    }
 }

@@ -6,10 +6,10 @@
  * 
  * ***************************************************************/
 #include <iostream>
-#include "Movies.h"
+#include "Movies.cpp"
 
 // Function prototypes
-void increment_watched(Movies &movies, std::string name);
+void increment_watched(Movies &my_movies, std::string name);
 void add_movie(Movies &movies, std::string name, std::string rating, int watched);
 
 /******************************************************************
@@ -23,8 +23,8 @@ void add_movie(Movies &movies, std::string name, std::string rating, int watched
 *  because the name of the movie was not found
  * ***************************************************************/
 
-void increment_watched(Movies &movies, std::string name) {
-    if (movies.increment_watched(name)) {
+void increment_watched(Movies &my_movies, std::string name) {
+    if (my_movies.increment_watched(name)) {
         std::cout << name << " watch incremented" <<  std::endl;
     } else {
         std::cout << name << " not found" <<  std::endl;
@@ -41,8 +41,8 @@ void increment_watched(Movies &movies, std::string name) {
 *  otherwise the movie was not added 
 *  because the name of the movie was already in movies
  * ***************************************************************/
-void add_movie(Movies &movies, std::string name, std::string rating, int watched) {
-    if (movies.add_movie(name,rating,watched)) {
+void add_movie(Movies &my_movies, std::string name, std::string rating, int watched) {
+    if (my_movies.add_movie(name,rating,watched)) {
         std::cout << name << " added" << std::endl;
     } else {
         std::cout << name << " already exists" <<  std::endl;
