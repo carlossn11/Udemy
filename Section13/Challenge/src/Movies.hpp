@@ -16,8 +16,10 @@ class Movies
 {
 private:
     std::vector<Movie> movies;
+    std::vector<Movie> *vecPtr; 
 public:
     Movies();             // Constructor
+    Movies(const Movies &src); //Copy Constructor
     ~Movies();          // Destructor
     bool add_movie(std::string name, std::string rating, int watched);
     bool increment_watched(std::string name);

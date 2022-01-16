@@ -11,12 +11,16 @@
  /*************************************************************************
     Movies no-args constructor
 **************************************************************************/
-Movies::Movies() {
+Movies::Movies() 
+: vecPtr (nullptr) {
+    vecPtr = &movies;
+
+}
+Movies::Movies(const Movies &src)
+{
+    
 }
 
-/*************************************************************************
-    Movies destructor
-**************************************************************************/
 Movies::~Movies() {
 }
 
@@ -32,21 +36,21 @@ Movies::~Movies() {
     *********************************************************************/
 bool Movies::add_movie(std::string name, std::string rating, int watched) 
 {
-    if(movies.size() == 0)
+    if((*vecPtr).size() == 0)
     {
         Movie movie(name, rating, watched);
-        movies.push_back(movie);
+        (*vecPtr).push_back(movie);
         return true;
     }else {
         size_t i {0};
-        for(auto &movie : movies)
+        for(auto &movie : *vecPtr)
         {
             if(movie.GetName() == name)
                 return false;
-            else if(i == (movies.size() - 1))
+            else if(i == ((*vecPtr).size() - 1))
             {
                 Movie movie(name, rating, watched);
-                movies.push_back(movie);
+                (*vecPtr).push_back(movie);
                 return true;
             }
             ++i;
@@ -68,13 +72,13 @@ bool Movies::add_movie(std::string name, std::string rating, int watched)
 bool Movies::increment_watched(std::string name) 
 {
     size_t i {0};
-    for(auto &movie : movies)
+    for(auto &movie : *vecPtr)
     {
         if(movie.GetName() == name)
         {
             movie.incerementWatched();
             return true;
-        }else if(i == (movies.size() - 1))
+        }else if(i == ((*vecPtr).size() - 1))
             return false;
         ++i;
     }
@@ -89,9 +93,9 @@ bool Movies::increment_watched(std::string name)
     *********************************************************************/
 void Movies::display() const 
 {
-    if(movies.size() == 0)
+    if((*vecPtr).size() == 0)
         std::cout << "No Movies to display\n";
-    for(const auto &movie : movies)
+    for(const auto &movie : *vecPtr)
     {
         std::cout << movie.GetName() << "\n";
     }
