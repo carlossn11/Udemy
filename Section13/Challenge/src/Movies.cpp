@@ -32,14 +32,24 @@ Movies::~Movies() {
     *********************************************************************/
 bool Movies::add_movie(std::string name, std::string rating, int watched) 
 {
-    for(size_t i {0}; i < movies.size(); i++)
+    if(movies.size() == 0)
     {
-        if((movies.at(i)).GetName() == name)
-            return false;
-        else if(!(i < movies.size()))
+        Movie movie(name, rating, watched);
+        movies.push_back(movie);
+        return true;
+    }else {
+        size_t i {0};
+        for(auto &movie : movies)
         {
-            Movie movie(name, rating, watched);
-            movies.push_back(movie);
+            if(movie.GetName() == name)
+                return false;
+            else if(i == (movies.size() - 1))
+            {
+                Movie movie(name, rating, watched);
+                movies.push_back(movie);
+                return true;
+            }
+            ++i;
         }
     }
 }
@@ -55,9 +65,19 @@ bool Movies::add_movie(std::string name, std::string rating, int watched)
     Otherwise, return false since then no movies object with the movie name
     provided exists to increment
     *********************************************************************/
-bool Movies::increment_watched(std::string name) {
-   // you implement this method
-   return false;
+bool Movies::increment_watched(std::string name) 
+{
+    size_t i {0};
+    for(auto &movie : movies)
+    {
+        if(movie.GetName() == name)
+        {
+            movie.incerementWatched();
+            return true;
+        }else if(i == (movies.size() - 1))
+            return false;
+        ++i;
+    }
 }
 
 /*************************************************************************

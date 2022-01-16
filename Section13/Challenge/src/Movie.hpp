@@ -8,6 +8,6 @@ class Movie
     int watched;
 public:
     Movie(std::string name, std::string rating, int watched);
-    std::string GetName() { return name; }
-
+    std::string GetName() const { return name; }
+    void incerementWatched() { ++watched; }
 };

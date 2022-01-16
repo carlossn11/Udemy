@@ -7,4 +7,3 @@ Movie::Movie(std::string name, std::string rating, int watched)
     this -> rating = rating;
     this -> watched = watched;
 }
-

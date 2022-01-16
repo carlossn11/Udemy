@@ -6,11 +6,7 @@
  * 
  * ***************************************************************/
 #include <iostream>
-#include "Movies.cpp"
-
-// Function prototypes
-void increment_watched(Movies &my_movies, std::string name);
-void add_movie(Movies &movies, std::string name, std::string rating, int watched);
+#include "Movies.hpp"
 
 /******************************************************************
  * helper function 
