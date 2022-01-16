@@ -89,6 +89,8 @@ bool Movies::increment_watched(std::string name)
     *********************************************************************/
 void Movies::display() const 
 {
+    if(movies.size() == 0)
+        std::cout << "No Movies to display\n";
     for(const auto &movie : movies)
     {
         std::cout << movie.GetName() << "\n";
