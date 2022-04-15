@@ -1,13 +1,22 @@
+#ifndef MYEX_H_
+#define MYEX_H_
+
 class Mystring {
-public:
-  void displayStr();
+ public:
+  // Constuctors & Destructors
   Mystring(const char* str);
-  ~Mystring();
-  Mystring(Mystring &&rhs);
   Mystring(const Mystring &rhs);
+  Mystring(Mystring &&rhs);
+  ~Mystring();
+
+  // Overloaded Operators
   void operator=(const Mystring &rhs);
   void operator=(Mystring &&rhs);
-private:
-  char* str;
 
+  // Class Public Methods
+  void displayStr();
+
+ private:
+  char* str;
 };
+#endif // MYEX_H_
