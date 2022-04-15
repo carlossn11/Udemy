@@ -69,47 +69,31 @@ include CMakeFiles/main.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/main.dir/flags.make
 
-CMakeFiles/main.dir/src/main.cpp.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/src/main.cpp.o: ../src/main.cpp
-CMakeFiles/main.dir/src/main.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Dev/Cpp/Udemy/Section14/Mystring-move-assignment/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/main.dir/src/main.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/main.cpp.o -MF CMakeFiles/main.dir/src/main.cpp.o.d -o CMakeFiles/main.dir/src/main.cpp.o -c /Users/Dev/Cpp/Udemy/Section14/Mystring-move-assignment/src/main.cpp
+CMakeFiles/main.dir/src/MyEx.cpp.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/src/MyEx.cpp.o: ../src/MyEx.cpp
+CMakeFiles/main.dir/src/MyEx.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Dev/Cpp/Udemy/Section14/Mystring-move-assignment/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/main.dir/src/MyEx.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/MyEx.cpp.o -MF CMakeFiles/main.dir/src/MyEx.cpp.o.d -o CMakeFiles/main.dir/src/MyEx.cpp.o -c /Users/Dev/Cpp/Udemy/Section14/Mystring-move-assignment/src/MyEx.cpp
 
-CMakeFiles/main.dir/src/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/src/main.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/Dev/Cpp/Udemy/Section14/Mystring-move-assignment/src/main.cpp > CMakeFiles/main.dir/src/main.cpp.i
+CMakeFiles/main.dir/src/MyEx.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/src/MyEx.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/Dev/Cpp/Udemy/Section14/Mystring-move-assignment/src/MyEx.cpp > CMakeFiles/main.dir/src/MyEx.cpp.i
 
-CMakeFiles/main.dir/src/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/main.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/Dev/Cpp/Udemy/Section14/Mystring-move-assignment/src/main.cpp -o CMakeFiles/main.dir/src/main.cpp.s
-
-CMakeFiles/main.dir/src/Mystring.cpp.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/src/Mystring.cpp.o: ../src/Mystring.cpp
-CMakeFiles/main.dir/src/Mystring.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Dev/Cpp/Udemy/Section14/Mystring-move-assignment/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/main.dir/src/Mystring.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/Mystring.cpp.o -MF CMakeFiles/main.dir/src/Mystring.cpp.o.d -o CMakeFiles/main.dir/src/Mystring.cpp.o -c /Users/Dev/Cpp/Udemy/Section14/Mystring-move-assignment/src/Mystring.cpp
-
-CMakeFiles/main.dir/src/Mystring.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/src/Mystring.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/Dev/Cpp/Udemy/Section14/Mystring-move-assignment/src/Mystring.cpp > CMakeFiles/main.dir/src/Mystring.cpp.i
-
-CMakeFiles/main.dir/src/Mystring.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/Mystring.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/Dev/Cpp/Udemy/Section14/Mystring-move-assignment/src/Mystring.cpp -o CMakeFiles/main.dir/src/Mystring.cpp.s
+CMakeFiles/main.dir/src/MyEx.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/MyEx.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/Dev/Cpp/Udemy/Section14/Mystring-move-assignment/src/MyEx.cpp -o CMakeFiles/main.dir/src/MyEx.cpp.s
 
 # Object files for target main
 main_OBJECTS = \
-"CMakeFiles/main.dir/src/main.cpp.o" \
-"CMakeFiles/main.dir/src/Mystring.cpp.o"
+"CMakeFiles/main.dir/src/MyEx.cpp.o"
 
 # External object files for target main
 main_EXTERNAL_OBJECTS =
 
-main: CMakeFiles/main.dir/src/main.cpp.o
-main: CMakeFiles/main.dir/src/Mystring.cpp.o
+main: CMakeFiles/main.dir/src/MyEx.cpp.o
 main: CMakeFiles/main.dir/build.make
 main: CMakeFiles/main.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/Dev/Cpp/Udemy/Section14/Mystring-move-assignment/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/Dev/Cpp/Udemy/Section14/Mystring-move-assignment/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable main"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/main.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -6,3 +6,4 @@
 *.project
 *.mk
 Makefile
+/build

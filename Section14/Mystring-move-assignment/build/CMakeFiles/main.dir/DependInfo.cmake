@@ -8,8 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/Dev/Cpp/Udemy/Section14/Mystring-move-assignment/src/Mystring.cpp" "CMakeFiles/main.dir/src/Mystring.cpp.o" "gcc" "CMakeFiles/main.dir/src/Mystring.cpp.o.d"
-  "/Users/Dev/Cpp/Udemy/Section14/Mystring-move-assignment/src/main.cpp" "CMakeFiles/main.dir/src/main.cpp.o" "gcc" "CMakeFiles/main.dir/src/main.cpp.o.d"
+  "/Users/Dev/Cpp/Udemy/Section14/Mystring-move-assignment/src/MyEx.cpp" "CMakeFiles/main.dir/src/MyEx.cpp.o" "gcc" "CMakeFiles/main.dir/src/MyEx.cpp.o.d"
   )
 
 # Targets to which this target links.
