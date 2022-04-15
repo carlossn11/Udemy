@@ -5,6 +5,8 @@ public:
   ~Mystring();
   Mystring(Mystring &&rhs);
   Mystring(const Mystring &rhs);
+  void operator=(const Mystring &rhs);
+  void operator=(Mystring &&rhs);
 private:
   char* str;
 
