@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cstring>
-#include "Mystring.h"
+#include "../include/Mystring.h"
 
  // No-args constructor
 Mystring::Mystring() 
@@ -31,7 +31,7 @@ Mystring::Mystring(const Mystring &source)
 }
 
 // Move constructor
-Mystring::Mystring( Mystring &&source) 
+Mystring::Mystring(Mystring &&source) 
     :str(source.str) {
         source.str = nullptr;
         std::cout << "Move constructor used" << std::endl;
@@ -43,8 +43,8 @@ Mystring::~Mystring() {
         std::cout << "Calling destructor for Mystring : nullptr" << std::endl;
     } else {
          std::cout << "Calling destructor for Mystring : " << str << std::endl;
+         delete [] str;
     }
-    delete [] str;
 }
 
  // Copy assignment

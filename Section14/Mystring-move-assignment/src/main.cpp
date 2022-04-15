@@ -2,7 +2,7 @@
 // Overloading move constructor and move assignment operator
 #include <iostream>
 #include <vector>
-#include "Mystring.h"
+#include "../include/Mystring.h"
 
 using namespace std;
 
@@ -31,7 +31,7 @@ int main() {
     
     stooges = "Larry, Moe, and Curly";  
     stooges.display();
-    
+
     vector<Mystring> stooges_vec;
     stooges_vec.push_back("Larry");                // Move constructor
     stooges_vec.push_back("Moe");                // Move constructor
