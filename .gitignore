@@ -3,4 +3,5 @@
 *.tar
 *.DS_Store
 *.d
+*.project
 Makefile
