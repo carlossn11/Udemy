@@ -47,18 +47,15 @@ String::String(const char* str) : m_str(nullptr) {
 String::String(const String &rhs) : m_str(nullptr) {
   this->m_str = new char[std::strlen(rhs.m_str) + 1];
   std::strcpy(this->m_str, rhs.m_str);
-  std::cout << "Copy Constructor\n";
 }
 // Move Constructor
 String::String(String &&rValue) : m_str(nullptr) {
   this->m_str = rValue.m_str;
   rValue.m_str = nullptr;
-  std::cout << "Move Constructor\n";
 }
 // Destructor
 String::~String() {
   delete []m_str;
-  std::cout << "Delete Made\n";
 }
 // Print Method
 void String::print() const {
