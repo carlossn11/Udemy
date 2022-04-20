@@ -1,14 +1,16 @@
 #include <iostream>
 #include <cstring>
 #include <vector>
+#include <string>
 #include "../include/string.h"
 
 int main() {
-  los::String carlos {"Carlos "};
-  los::String connor {"& Connor"};
+  los::String connor {"Connor"};
+  std::vector<los::String> strs;
 
-  std::cout << carlos << "\n";
-  std::cin >> carlos;
-  std::cout << carlos << "\n";
+  strs.push_back("PUSSHHHHH");
+  connor = "GOAT";
+  connor.print();
+  strs[0].print();
   return 0;
 }

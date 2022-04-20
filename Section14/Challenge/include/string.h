@@ -101,7 +101,11 @@ void operator*=(String &obj, const int multiplyBy) {
 }
 // Insertion Operator
 std::ostream &operator<<(std::ostream &os, const String &obj) {
-  os << obj.m_str;
+  if (obj.m_str != nullptr) {
+    os << obj.m_str;
+  }else {
+    os << "nullptr\n";
+  }
   return os;
 }
 // Extraction Operator
