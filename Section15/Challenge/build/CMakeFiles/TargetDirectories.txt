@@ -1,3 +1,0 @@
-/Users/ca/CC/Udemy/Section15/Challenge/build/CMakeFiles/main.dir
-/Users/ca/CC/Udemy/Section15/Challenge/build/CMakeFiles/edit_cache.dir
-/Users/ca/CC/Udemy/Section15/Challenge/build/CMakeFiles/rebuild_cache.dir

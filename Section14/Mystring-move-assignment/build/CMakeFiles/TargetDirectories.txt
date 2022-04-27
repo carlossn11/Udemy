@@ -1,3 +1,0 @@
-/Users/Dev/Cpp/Udemy/Section14/Mystring-move-assignment/build/CMakeFiles/main.dir
-/Users/Dev/Cpp/Udemy/Section14/Mystring-move-assignment/build/CMakeFiles/edit_cache.dir
-/Users/Dev/Cpp/Udemy/Section14/Mystring-move-assignment/build/CMakeFiles/rebuild_cache.dir

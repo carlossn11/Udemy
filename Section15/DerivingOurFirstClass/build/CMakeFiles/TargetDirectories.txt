@@ -1,3 +1,0 @@
-/Users/Dev/CC/Udemy/Section15/DerivingOurFirstClass/build/CMakeFiles/main.dir
-/Users/Dev/CC/Udemy/Section15/DerivingOurFirstClass/build/CMakeFiles/edit_cache.dir
-/Users/Dev/CC/Udemy/Section15/DerivingOurFirstClass/build/CMakeFiles/rebuild_cache.dir
