@@ -4,4 +4,4 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 project(main)
 add_executable(main src/main.cpp src/Account_Util.cpp src/Account.cpp
-               src/Savings_Account.cpp)
+               src/Savings_Account.cpp src/CheckingAccount.cpp)

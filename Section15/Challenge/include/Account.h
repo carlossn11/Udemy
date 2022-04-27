@@ -13,6 +13,7 @@ protected:
     std::string name;
     double balance;
 public:
+    // Default values if none are passed in then these take its place
     Account(std::string name = def_name, double balance = def_balance);
     // Account(std::string name = "Unamed Account", double balance = 0.0);
     bool deposit(double amount);
