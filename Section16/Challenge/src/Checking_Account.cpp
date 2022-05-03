@@ -1,4 +1,4 @@
-#include "Checking_Account.h"
+#include "../include/Checking_Account.h"
 
 Checking_Account::Checking_Account(std::string name, double balance)
     : Account {name, balance} {
