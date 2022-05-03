@@ -11,7 +11,6 @@
 //
 
 class Savings_Account: public Account {
-    friend std::ostream &operator<<(std::ostream &os, const Savings_Account &account);
 private:
     static constexpr const char *def_name = "Unnamed Savings Account";
     static constexpr double def_balance = 0.0;
@@ -19,8 +18,11 @@ private:
 protected:
     double int_rate;
 public:
+    virtual void print(std::ostream &os) const override {
+        os << "[Savings_Account: " << name << ": " << balance << ", " << int_rate << "%]";
+    }
     Savings_Account(std::string name = def_name, double balance =def_balance, double int_rate = def_int_rate);    
-    virtual bool deposit(double amount);
+    virtual bool deposit(double amount) override;
     // Inherits the Account::withdraw methods
 };
 
