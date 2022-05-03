@@ -9,7 +9,7 @@ class CheckingAccount : public Account {
   CheckingAccount(const std::string &name = def_name ,
                   const double &balance = def_balance)
       : Account(name, balance) {}
-  bool withdraw(double balance);
+  virtual bool withdraw(double balance);
  private:
   static constexpr const char* def_name = "Unnamed Checkings";
   static constexpr double def_balance = 0.0f;

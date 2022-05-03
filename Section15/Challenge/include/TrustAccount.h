@@ -7,8 +7,8 @@ class TrustAccount : public Savings_Account {
   TrustAccount(std::string name = def_name, double balance = def_balance,
                double interestRate = def_int_rate)
       : Savings_Account(name, balance, interestRate), currWithdrawNum(1) {}
-  bool deposit(double amount);
-  bool withdraw(double amount);
+  virtual bool deposit(double amount);
+  virtual bool withdraw(double amount);
  private:
   int currWithdrawNum;
   static constexpr const char* def_name = "Unnamed Trust";
