@@ -6,4 +6,4 @@ set(CMAKE_BUILD_TYPE Debug)
 project(main)
 add_executable(main src/main.cpp src/Account_Util.cpp src/Account.cpp
                src/Checking_Account.cpp src/Savings_Account.cpp
-               src/Trust_Account.cpp)
+               src/Trust_Account.cpp src/I_Printable.cpp)
