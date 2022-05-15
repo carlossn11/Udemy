@@ -2,6 +2,8 @@
 // Stack Unwinding
 #include <iostream>
 
+class Exception {
+};
 void func_a();
 void func_b();
 void func_c();
@@ -17,7 +19,7 @@ void func_b() {
     try {
         func_c();
     }
-    catch (int &ex) {
+    catch (const Exception &ex) {
          std::cout << "Caught error in func_b" << std::endl;       
     }
     std::cout << "Ending func_b" << std::endl;
@@ -25,7 +27,7 @@ void func_b() {
 
 void func_c()  {
     std::cout << "Starting func_c" << std::endl;
-    throw 100;
+    throw Exception();
     std::cout << "Ending func_c" << std::endl; 
 }
 
@@ -35,7 +37,7 @@ int main() {
     try {
         func_a();
     }
-    catch (int &ex) {
+    catch (...) {
         std::cout << "Caught error in main" << std::endl;
     }
     std::cout << "Finishing main" << std::endl;

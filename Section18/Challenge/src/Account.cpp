@@ -17,10 +17,10 @@ bool Account::deposit(double amount) {
 
 bool Account::withdraw(double amount) {
     if (balance-amount >=0) {
-        balance-=amount;
+        balance -= amount;
         return true;
-    } else
-        return false;
+    }
+    throw InsufficientFundsException();
 }
 
  void Account::print(std::ostream &os) const {
