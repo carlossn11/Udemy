@@ -107,7 +107,7 @@ void test4() {
     stooges.push_back(p1);
     display(stooges);
     
-    stooges.push_back(Person{"Moe", 25});
+    stooges.push_back(std::move(Person{"Moe", 25}));
     display(stooges);
     
     stooges.emplace_back("Curly", 30);      // Use emplace_back!!!
@@ -159,16 +159,28 @@ void test6() {
 void test7() {
     std::cout << "\nTest7 =========================" << std::endl;
     
-    std::vector<int> vec1 {1,2,3,4,5};
+    std::vector<int> vec1 {1,2,3,4,5,14,12};
     std::vector<int> vec2 {10,20,30,40,50};
     
     display(vec1);
     display(vec2);
     std::cout << std::endl;
+    std::cout << "\nvec size: " << vec1.size() << std::endl;
+    std::cout << "vec max size: " << vec1.max_size() << std::endl;
+    std::cout << "vec capacity: " << vec1.capacity() << std::endl;
+    std::cout << "\nvec size: " << vec2.size() << std::endl;
+    std::cout << "vec max size: " << vec2.max_size() << std::endl;
+    std::cout << "vec capacity: " << vec2.capacity() << std::endl;
 
     vec2.swap(vec1);
     display(vec1);
     display(vec2);
+    std::cout << "\nvec size: " << vec1.size() << std::endl;
+    std::cout << "vec max size: " << vec1.max_size() << std::endl;
+    std::cout << "vec capacity: " << vec1.capacity() << std::endl;
+    std::cout << "\nvec size: " << vec2.size() << std::endl;
+    std::cout << "vec max size: " << vec2.max_size() << std::endl;
+    std::cout << "vec capacity: " << vec2.capacity() << std::endl;
 }
 
 void test8() {
@@ -224,7 +236,7 @@ void test10() {
     std::cout << "\nTest10  =========================" << std::endl;
     // transform over 2 ranges
     
-    std::vector<int> vec1 {1,2,3,4,5};   
+    std::vector<int> vec1 {1,2,3,4,5,10,14,12};   
     std::vector<int> vec2 {10,20,30,40,50};
     std::vector<int> vec3;
     
@@ -234,6 +246,9 @@ void test10() {
         std::back_inserter(vec3),
         [](int x, int y) { return x * y;});
         
+    std::cout << "\nvec size: " << vec2.size() << std::endl;
+    std::cout << "vec max size: " << vec2.max_size() << std::endl;
+    std::cout << "vec capacity: " << vec2.capacity() << std::endl;
     display(vec3);
     
 }
