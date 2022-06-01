@@ -7,25 +7,17 @@
 #include <sstream>
 #include <map>
 #include <set>
+#include <cctype>
 #include <string>
 #include <iomanip>
 
-// Used for Part1
-// Display the word and count from the 
-// std::map<std::string, int>
-
 void display_words(const std::map<std::string, int> &words) {
-    std::cout << std::setw(12) << std::left << "\nWord"
-                << std::setw(7) << std::right << "Count"<< std::endl;
-    std::cout << "===================" << std::endl;
-    for (auto pair: words)
-        std::cout << std::setw(12) << std::left << pair.first 
-                       << std::setw(7) << std::right << pair.second << std::endl;
+    std::cout << std::left;
+    for (auto it = words.cbegin(); it != words.cend(); ++it) {
+        std::cout << std::setw(15) << it->first << it->second << std::endl;
+    }
+    std::cout << std::right;
 }
-
-// Used for Part2
-// Display the word and occurences from the 
-// std::map<std::string, std::set<int>>
 
 void display_words(const std::map<std::string, std::set<int>> &words)
 {
@@ -49,8 +41,9 @@ std::string clean_string(const std::string &s) {
         if (c == '.' || c == ',' || c == ';' || c == ':')
             continue;
         else
-            result += c;
+            result += tolower(c);
     }
+    result.at(0) = toupper(result.at(0));
     return result;
 }
 
@@ -59,13 +52,13 @@ std::string clean_string(const std::string &s) {
 
 void part1() {
     std::map<std::string, int> words;
-    std::string line;       
     std::string word;   
-    std::ifstream in_file {"../words.txt"};
+    std::ifstream in_file {"words.txt"};
     if (in_file) {
-        
-        // You implement this code
-        
+        while (in_file >> word) {
+            word = clean_string(word);
+            words[word] += 1;
+        }
         in_file.close();
         display_words(words);
     } else {
@@ -78,21 +71,26 @@ void part1() {
 void part2() {
     std::map<std::string, std::set<int>> words;
     std::string line;
+    int lineCount = 1;
     std::string word;
-    std::ifstream in_file {"../words.txt"};
+    std::ifstream in_file {"words.txt"};
     if (in_file) {
-     
-        // You implement this code
-        
-        in_file.close();
+        while (std::getline(in_file, line)) {
+            std::stringstream ss(line);
+            while (ss >> word) {
+                word = clean_string(word);
+                words[word].insert(lineCount);
+            }
+            ++lineCount;
+        }
         display_words(words);
+        in_file.close();
     } else {
         std::cerr << "Error opening input file" << std::endl;
     }
 }
 
 int main() {
-    part1();
     part2();
     return 0;
 }
