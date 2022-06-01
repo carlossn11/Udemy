@@ -8,11 +8,22 @@
 #include <string>
 #include <iomanip>
 
-bool is_palindrome(const std::string& s)
-{
-    // You must implement this function.
-    // Since we are learning the STL - use a stack and a queue to solve the problem.
-    return false;
+bool is_palindrome(const std::string& s) {
+  std::stack<char> stack;
+  std::queue<char> queue;
+  for (auto c : s) {
+    if (std::isalpha(c)) {
+      stack.push(toupper(c));
+      queue.push(toupper(c));
+    }
+  }
+  while (!stack.empty() && !queue.empty()) {
+    if (stack.top() != queue.front())
+      return false;
+    stack.pop();
+    queue.pop();
+  }
+  return true;
 }
 
 int main()
