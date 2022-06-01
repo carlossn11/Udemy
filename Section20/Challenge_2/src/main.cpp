@@ -56,17 +56,13 @@ void display_menu() {
 }
 
 void play_current_song(const Song &song) {
-  // This function should display 
-  // Playing: followed by the song that is playing
-  
-  std::cout << "You implement this function"<< std::endl;
+  std::cout << "\nPlaying:\n"<< song << std::endl;
 }
 
 void display_playlist(const std::list<Song> &playlist, const Song &current_song) {
-  // This function should display the current playlist 
-  // and then the current song playing.
-  
-  std::cout << "You implement this function" << std::endl;
+  std::cout << std::endl;
+  for (auto song : playlist) { std::cout << song << std::endl; }
+  std::cout << "Current Song:\n" << current_song << std::endl;
 }
 
 int main() {
@@ -78,7 +74,60 @@ int main() {
     {"Wait",              "Maroone 5",                 4},
     {"Whatever It Takes", "Imagine Dragons",           3}          
   };
+  std::list<Song>::const_iterator currentSong = playlist.cbegin();
+  char input;
+  display_playlist(playlist, *currentSong);
+  do {
+    display_menu();
+    std::cin.get(input);
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    switch (toupper(input)) {
+      case 'Q': { break; }
+      case 'F': {
+        currentSong = std::cbegin(playlist);
+        play_current_song(*currentSong);
+        break;
+      }
+      case 'N': {
+        ++currentSong;
+        if (currentSong == playlist.cend())
+          currentSong = std::cbegin(playlist);
+        play_current_song(*currentSong);
+        break;
+      }
+      case 'P': {
+        --currentSong;
+        if (currentSong == playlist.cend())
+          std::advance(currentSong, -1);
+        play_current_song(*currentSong);
+        break;
+      }
+      case 'A': {
+        std::string name;
+        std::string artist;
+        int rating;
 
+        std::cout << "Adding and playing new song:\n" << std::left;
+        std::cout << std::setw(25) << "Enter song name:";
+        std::getline(std::cin, name);
+        std::cout << std::setw(25) << "Enter song artist:";
+        std::getline(std::cin, artist);
+        std::cout << std::setw(25) << "Enter your rating (1-5):" << std::right;
+        std::cin >> rating;
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+        playlist.insert(currentSong, std::move(Song(name, artist, rating)));
+        std::advance(currentSong, -1);
+        play_current_song(*currentSong);
+        break;
+      }
+      case 'L': {
+        display_playlist(playlist, *currentSong);
+        break;
+      }
+    }
+  } while (toupper(input) != 'Q');
+  
   std::cout << "Thanks for listening!" << std::endl;
   return 0;
 }
