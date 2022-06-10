@@ -18,7 +18,6 @@ bool is_palindrome(const std::string& s) {
 
     return false;
   });
-
   std::transform(std::cbegin(dequeTypeChar), std::cend(dequeTypeChar), std::begin(dequeTypeChar), ::toupper);
 
   std::deque<char> reversedTypeChar;
