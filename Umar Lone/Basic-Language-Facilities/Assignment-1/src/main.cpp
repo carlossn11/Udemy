@@ -2,15 +2,25 @@
 #include <vector>
 #include <memory>
 #include <iomanip>
+#include <string>
+#include <bitset>
 
-int add(int* a, int* b);
+template<typename T>
+int add(int* a, int* b, T src);
 void swap(int* a, int* b);
 
 int main() {
+  // uint32_t n = 0b00100010000000000000000000001011;
+  // std::bitset<32> s(n);
+  // std::cout << s.to_string() << '\n';
+  // std::cout << std::count_if(s.to_string().begin(), s.to_string().end(), [](char c){
+  //   return (c == '1');
+  // });
   return 0;
 }
 
-int add(int* a, int* b) {
+template<typename T>
+int add(int* a, int* b, T src) {
   return (*a + *b);
 }
 
