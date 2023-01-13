@@ -8,6 +8,7 @@
 template<typename T>
 int add(int* a, int* b, T src);
 void swap(int* a, int* b);
+void factorial(int* num, int* result);
 
 int main() {
   // uint32_t n = 0b00100010000000000000000000001011;
@@ -17,6 +18,13 @@ int main() {
   //   return (c == '1');
   // });
   return 0;
+}
+
+void factorial(int* num, int* result) {
+  *result = 1;
+  for (auto i = 1; i <= *num; ++i) {
+    *result *= i;
+  }
 }
 
 template<typename T>
